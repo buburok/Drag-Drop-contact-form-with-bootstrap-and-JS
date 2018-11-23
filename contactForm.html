@@ -1,0 +1,166 @@
+<html>
+	<head>
+		<link rel="stylesheet" href=".\bootstrap-3.3.7-dist\css\bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src=".\bootstrap-3.3.7-dist\js\jq.2.2.js"></script>
+		<script src=".\bootstrap-3.3.7-dist\js\jq-ui.js"></script>
+		
+		<style>
+			.panel-heading.form-group.ui-sortable-handle {
+			border: 1px solid transparent;
+			padding: 0px;
+			margin-bottom: 1px;
+			}
+			.panel.panel-info {
+			background-color: #fff0;
+			border: 1px solid #0000 !important;
+			}
+			#saveForm {
+			width: 100%;
+			text-transform: uppercase;
+			font-weight: 600;
+			}
+			#cf {
+			text-align: center;
+			}
+			body {
+			color: #31708f;
+			}
+			label {
+			padding-left: 5px;
+			}
+			#exampleFormControlFile1 {
+			color: #31708f;
+			height: 30px;
+			}
+			#title4:hover {
+			color: #ff7e00;
+			}
+			.container {
+			height: 800px;
+			}
+			.form-group {
+			margin-bottom: 0px;
+			}
+			
+		</style>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div><h1 id="cf">CONTACT FORM</h1></div>
+<form id="contact-form" method="post" action="contact.php" role="form">
+<ul id="draggablePanelList" class="list-unstyled">
+<li class="panel panel-info col-lg-6 col-md-12 col-sm-12">
+<div class="panel-heading form-group">
+<label class="desc" id="title1" for="Field1">Full Name</label>
+<div>
+<input id="Field1" name="Field1" type="text" class="field text fn form-control" placeholder="Full Name" value="" size="8" tabindex="1">						
+</li>
+<li class="panel panel-info col-lg-6 col-md-12 col-sm-12">
+<div class="panel-heading form-group">
+<label class="desc " id="title1" for="Field1">Company name</label>
+<div>
+<input id="Field1" name="Field1" type="text" class="field text fn form-control" placeholder="Company name"  value="" size="8" tabindex="1">
+</li>									
+<li class="panel panel-info col-lg-6 col-md-12 col-sm-12">
+<div class="panel-heading form-group">
+<label class="desc" id="title1" for="Field1">Subject</label>
+</div>
+<input id="Field1" name="Field1" type="text" class="field text fn form-control" placeholder="Subject"   value="" size="8" tabindex="1">
+</li>
+<li class="panel panel-info col-lg-6 col-md-12 col-sm-12">
+<div class="panel-heading form-group">
+<label class="desc" id="title3" for="Field3">Email</label>
+<div>
+<input id="Field3" class="form-control"  name="Field3" type="email" spellcheck="false" placeholder="Email" value="" maxlength="255" tabindex="3"> 
+</li>
+<li class="panel panel-info col-lg-12 col-md-12 col-sm-12">
+<div class="panel-heading form-group">
+<label class="desc" id="title4" for="Field4">
+Message
+</label>
+<div id="colaPs" >
+<textarea id="Field4" style="display:none;" class="form-control"  name="Field4" spellcheck="true" rows="10" cols="50" placeholder="Message"  tabindex="4"></textarea>
+</div>
+</li>
+<li class="panel panel-info col-lg-12 col-md-12 col-sm-12">
+<div class="panel-heading form-group">
+<label class="desc" id="title106" for="Field106">
+Check All That Apply
+</legend>
+</div>
+<fieldset>	
+<div>
+<input id="Field6" class="form-check-input" name="Field6" type="checkbox" value="First Choice" tabindex="8">
+<label class="choice" for="Field6">First Choice</label>
+</div>
+<div>
+<input id="Field7" name="Field7" type="checkbox" value="Second Choice" tabindex="9">
+<label class="choice" for="Field7">Second Choice</label>
+</div>
+<div>
+<input id="Field8" name="Field8" type="checkbox" value="Third Choice" tabindex="10">
+<label class="choice" for="Field8">Third Choice</label>
+</div>
+</fieldset>
+</li>
+<li class="panel panel-info col-lg-6 col-md-12 col-sm-12">
+<div class="panel-heading form-group"> 
+<label for="exampleFormControlFile1">Example file input</label>
+</div>
+<div class="form-group">
+<input type="file" class="form-control-file" id="exampleFormControlFile1">
+</div>
+</li>
+<li class="panel panel-info col-lg-6 col-md-12 col-sm-12">
+<div class="panel-heading form-group">
+<label class="desc" id="title106" for="Field106">
+Select a Choice
+</label>
+</div>
+<select id="Field106" name="Field106" class="field select medium form-control" tabindex="11"> 
+<option value="First Choice">First Choice</option>
+<option value="Second Choice">Second Choice</option>
+<option value="Third Choice">Third Choice</option>
+</select>
+</li>
+<br>
+<div class="col-lg-4 col-md-6 col-sm-12">
+<button id="saveForm" name="saveForm" type="submit" class="btn btn-primary mb-2 col-lg-4 col-md-6 col-sm-12" value="Submit">Submit</button>
+</div>
+</ul>
+</form>
+</div>
+</div><br><br>
+
+<script> jQuery(function($) {var panelList = $('#draggablePanelList');
+panelList.sortable({
+handle: '.panel-heading', 
+update:function() {
+$('.panel', panelList).each(function(index, elem) {
+var $listItem = $(elem),
+newIndex = $listItem.index();
+
+});
+}
+});
+});
+jQuery(function($) {
+var panelList2 = $('#draggablePanelList2');
+panelList2.sortable({
+
+handle: '.panel-heading', 
+update: function() {
+$('.panel', panelList2).each(function(index, elem) {
+var $listItem = $(elem),
+newIndex = $listItem.index();
+
+});
+}
+});
+});
+jQuery( "#title4" ).click(function() {
+  jQuery( "#Field4" ).slideToggle('slow')});
+</script>
+</body>
+</html>
